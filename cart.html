@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shoppie - Cart</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script defer src="./assets/js/script.js"></script>
+  <style>/* Cart Section */
+   /* Cart Section */
+.section.cart {
+  padding: 50px 20px;
+  margin-top: 100px;
+  text-align: center;
+  background: linear-gradient(135deg, #f8f9fa, #e3e8ef);
+  min-height: 100vh;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Cart Items Container */
+.cart-items {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  max-width: 850px;
+  margin: 20px auto;
+}
+
+/* Individual Cart Item */
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 2px dashed #ccc;
+  transition: background 0.3s ease-in-out;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-item:hover {
+  background: rgba(240, 240, 240, 0.6);
+}
+
+/* Product Image */
+.cart-img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Product Details */
+.cart-info {
+  flex: 1;
+  text-align: left;
+  margin-left: 20px;
+}
+
+.cart-info h3 {
+  font-size: 20px;
+  margin: 0;
+  color: #222;
+  font-weight: 600;
+}
+
+.cart-info p {
+  font-size: 17px;
+  color: #666;
+  margin: 5px 0;
+  font-weight: 500;
+}
+
+/* Remove Button */
+.remove-btn {
+  background: linear-gradient(135deg, #ff4d4d, #ff1a1a);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  box-shadow: 2px 4px 8px rgba(255, 0, 0, 0.3);
+}
+
+.remove-btn:hover {
+  background: linear-gradient(135deg, #cc0000, #990000);
+  transform: scale(1.05);
+  box-shadow: 2px 4px 12px rgba(255, 0, 0, 0.5);
+}
+
+/* 🔹 Improved Cart Total Section */
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 20px;
+  max-width: 850px;
+  margin: 30px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-size: 22px;
+  font-weight: bold;
+  color: #222;
+}
+
+.cart-total p {
+  margin: 0;
+  font-size: 22px;
+  font-weight: bold;
+  color: #444;
+}
+
+/* 🔹 Improved Checkout Button */
+#checkout-btn {
+  background: #ff6600;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 3px 5px 10px rgba(255, 102, 0, 0.3);
+}
+
+#checkout-btn:hover {
+  background: #cc5500;
+  transform: scale(1.05);
+  box-shadow: 3px 5px 15px rgba(255, 102, 0, 0.5);
+}
+
+    </style>
+</head>
+<body>
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="#" class="logo">
+        <img src="./assets/images/logo.svg" width="132" height="27" alt="shoppie home">
+      </a>
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+
+          <li>
+            <a href="index.html" class="navbar-link">Home</a>
+          </li>
+
+         
+          <li>
+            <a href="shop.html" class="navbar-link">Shop</a>
+          </li>
+
+          
+          <li> <a href="sale.html" class="navbar-link">sale</a>
+          </li>
+
+          <li> <a href="about.html" class="navbar-link">about</a>
+          </li>
+
+        </ul>
+
+        <button class="cart-btn">
+          <ion-icon name="bag" aria-hidden="true"></ion-icon>
+
+          <span class="span"><a href="cart.html">Cart (0)</a></span>
+        </button>
+
+        <a href="login.html" class="btn">Contact Us</a>
+      </nav>
+
+      <button class="nav-open-btn" aria-label="toggle menu" data-nav-toggler>
+        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+      </button>
+
+    </div>
+  </header>
+
+
+
+  
+  <main>
+    <section class="section cart" aria-label="cart">
+      <div class="container">
+        <h2 class="h2 section-title">Shopping Cart</h2>
+        <div class="cart-items"></div>
+        <div class="cart-total">
+          <p>Total: $<span id="cart-total">0.00</span></p>
+          <button class="btn btn-primary" id="checkout-btn">Proceed to Checkout</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  
+</body>
+</html>
