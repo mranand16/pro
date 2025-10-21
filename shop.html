@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shoppie - Shop</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script defer src="./assets/js/shop.js"></script>
+  <style>/* Shop Section */
+  /* Fix Transparent Navbar */
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: #ffffff !important; /* Ensure solid white background */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 14px 0;
+  z-index: 1000;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .shop-section {
+      margin-top: 100px;
+      padding: 60px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #f0f2f5, #d9e2ec);
+      min-height: 100vh;
+    }
+    
+    /* Section Title */
+    .section-title {
+      font-size: 34px;
+      font-weight: bold;
+      color: #222;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+    
+    /* Product Grid */
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    /* Product Card */
+    .product-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Product Image */
+    .product-img {
+      width: 100%;
+      max-width: 230px;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      transition: transform 0.3s ease;
+    }
+    
+    .product-card:hover .product-img {
+      transform: scale(1.05);
+    }
+    
+    /* Product Name */
+    .product-card h3 {
+      font-size: 22px;
+      color: #333;
+      margin: 12px 0;
+      font-weight: bold;
+    }
+    
+    /* Product Price */
+    .product-price {
+      font-size: 20px;
+      font-weight: bold;
+      color: #ff6600;
+      margin-bottom: 15px;
+    }
+    
+    /* Add to Cart Button */
+    .btn.add-to-cart {
+      background: linear-gradient(135deg, #ff6600, #ff4400);
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(255, 102, 0, 0.3);
+    }
+    
+    .btn.add-to-cart:hover {
+      background: linear-gradient(135deg, #ff4400, #cc3300);
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(255, 102, 0, 0.5);
+    }
+    </style>
+</head>
+<body>
+
+    <header class="header" data-header>
+        <div class="container">
+    
+          <a href="#" class="logo">
+            <img src="./assets/images/logo.svg" width="132" height="27" alt="shoppie home">
+          </a>
+    
+          <nav class="navbar" data-navbar>
+            <ul class="navbar-list">
+    
+              <li>
+                <a href="index.html" class="navbar-link">Home</a>
+              </li>
+    
+              <li>
+                <a href="shop.html" class="navbar-link">Shop</a>
+              </li>
+
+            
+              <li> <a href="sale.html" class="navbar-link">sale</a>
+              </li>
+    
+              <li> <a href="about.html" class="navbar-link">about</a>
+              </li>
+    
+            </ul>
+    
+            <button class="cart-btn">
+              <ion-icon name="bag" aria-hidden="true"></ion-icon>
+    
+              <span class="span"><a href="cart.html">Cart (0)</a></span>
+            </button>
+    
+            <a href="login.html" class="btn">Contact Us</a>
+          </nav>
+    
+          <button class="nav-open-btn" aria-label="toggle menu" data-nav-toggler>
+            <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+          </button>
+    
+        </div>
+      </header>
+
+  <main>
+    <section class="shop-section">
+      <div class="container">
+        <h2 class="section-title">Our Products</h2>
+        <div class="product-list" id="product-list">
+          <!-- Products will be dynamically loaded here -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
